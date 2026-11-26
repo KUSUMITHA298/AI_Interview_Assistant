@@ -28,7 +28,7 @@ except (KeyError, FileNotFoundError):
   st.error('GROQ_API_KEY is missing.')
   st.stop()
 st.title("AI Interview Assistant")
-role = st.selectbox("Select Job Role"),[
+role = st.selectbox("Select Job Role",[
   "Python Developer",
   "Java Developer",
   "Data Analyst",
