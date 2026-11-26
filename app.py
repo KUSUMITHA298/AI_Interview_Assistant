@@ -27,7 +27,7 @@ if st.button("Generate Interview Questions"):
         model="openai/gpt-oss-120b",
         messages=[
                 {"role" : "system", "content" : "You are an expert technical Interviewer"},
-            {"role" : "user", "content : prompt}
+            {"role" : "user", "content" : prompt}
         ]
     )
     output = response.choices[0].message.content
