@@ -13,7 +13,22 @@ except (KeyError, FileNotFoundError):
   st.error('GROQ_API_KEY is missing.')
   st.stop()
 st.title("AI Interview Assistant")
-role = st.selectbox("Select Job Role",[
+import streamlit as st
+from groq import Groq
+
+st.set_page_config(page_title='AI Interview Assistant', layout='centered')
+st.title('AI Interview Assistant')
+st.caption('Practice interviews with AI-generated questions and constructive feedback.')
+st.caption("kusumitha")
+st.write("Department of AIDS")
+try:
+  client = Groq(api_key=st.secrets['GROQ_API_KEY'])
+  st.write("API connection successful")
+except (KeyError, FileNotFoundError):
+  st.error('GROQ_API_KEY is missing.')
+  st.stop()
+st.title("AI Interview Assistant")
+role = st.selectbox("Select Job Role"),
   "Python Developer",
   "Java Developer",
   "Data Analyst",
@@ -21,6 +36,11 @@ role = st.selectbox("Select Job Role",[
   "Software Engineer",
   "HR Executive"
 ])
+st.button("Difficulty"):
+role = st.selectbox("Select Difficulty"),
+  "Beginner",
+  "Intermediate",
+  "Advance"
 if st.button("Generate Interview Questions"):
     prompt = "Generate 5 interview questions for the role of " + role
     response = client.chat.completions.create(
