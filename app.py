@@ -36,7 +36,7 @@ role = st.selectbox("Select Job Role",[
   "Software Engineer",
   "HR Executive"
 ])
-st.button("Difficulty"):
+st.button("Difficulty")
 role = st.selectbox("Select Difficulty"),
   "Beginner",
   "Intermediate",
