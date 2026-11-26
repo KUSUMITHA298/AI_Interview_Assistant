@@ -36,11 +36,12 @@ role = st.selectbox("Select Job Role",[
   "Software Engineer",
   "HR Executive"
 ])
-st.button("Difficulty")
-role = st.selectbox("Select Difficulty"),
+
+diff = st.selectbox("Select Level",[
   "Beginner",
   "Intermediate",
   "Advance"
+])
 if st.button("Generate Interview Questions"):
     prompt = "Generate 5 interview questions for the role of " + role
     response = client.chat.completions.create(
